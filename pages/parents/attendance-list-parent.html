@@ -1,0 +1,8 @@
+<div class="list attendanceItem" ng-repeat="X in presences">
+    <div class="item item-divider">
+        {{X.data}}
+    </div>
+    <a class="item" ng-repeat="X in students | filter: {data : val} | unique : id">
+        {{X.id}}. {{X.name}}
+    </a>
+</div>

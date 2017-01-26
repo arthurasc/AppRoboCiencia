@@ -1,0 +1,27 @@
+<div ng-controller="teacher-menu">
+
+    <main ng-include="dir"></main>
+
+    <div class="tabs tabs-icon-top">
+        <a class="tab-item" ng-click="teacherPages('Cronograma')">
+            <i class="icon ion-ios-clock-outline"></i>
+            Cronograma
+        </a>
+        <a class="tab-item" ng-click="teacherPages('Chamada')">
+            <i class="icon ion-ios-list-outline"></i>
+            Chamada
+        </a>
+        <a class="tab-item" ng-click="teacherPages('Vistos')">
+            <i class="icon ion-ios-checkmark-outline"></i>
+            Vistos
+        </a>
+        <a class="tab-item" ng-click="teacherPages('Novo')">
+            <i class="icon ion-ios-personadd-outline"></i>
+            Cadastro
+        </a>
+        <a class="tab-item" href="#/">
+            <i class="icon ion-ios-close-outline"></i>
+            Sair
+        </a>
+    </div>
+</div>

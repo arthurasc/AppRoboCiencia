@@ -1,0 +1,13 @@
+<div class="list">
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Dias de aula
+        </div>
+        <select ng-model="selectDateLesson" ng-change="selectDateLesson = selectDateLesson">
+            <option ng-repeat="X in students | unique : 'data'">{{X.data}}</option>
+        </select>
+    </label>
+    <a ng-if="selectDateLesson != null || selectDateLesson != undefined" class="item" ng-repeat="X in students | filter: {data : selectDateLesson} | unique : id">
+        {{X.id}}. {{X.name}}
+    </a>
+</div>

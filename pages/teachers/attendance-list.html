@@ -1,0 +1,33 @@
+<div class="addStarsAndObs" ng-controller="stars-controller">
+    <div class="card">
+        <div class="item item-text-wrap">
+
+            <div class="button-bar">
+                <a class="button icon ion-ios-star button-positive" ng-click="starSelect(1)"></a>
+                <a class="button icon ion-ios-star button-positive" ng-click="starSelect(2)"></a>
+                <a class="button icon ion-ios-star button-positive" ng-click="starSelect(3)"></a>
+                <a class="button icon ion-ios-star button-positive" ng-click="starSelect(4)"></a>
+                <a class="button icon ion-ios-star button-positive" ng-click="starSelect(5)"></a>
+            </div>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Observação</span>
+                <input type="text" placeholder="descrição" ng-model="obs">
+            </label>
+
+            <button class="button button-block button-positive" ng-click="sendStars()">
+                <i class="icon ion-ios-checkmark-outline"></i> Enviar
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div id="students">
+    <div id="stu{{X.id}}" class="item item-button-right" ng-repeat="X in students | unique : id">
+        {{X.id}}. {{X.name}}
+        <button class="button button-balanced" ng-click="confirmPresence($index, X.id)">
+            <i class="icon ion-ios-checkmark-outline"></i>
+        </button>
+    </div>
+</div>

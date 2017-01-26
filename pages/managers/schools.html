@@ -1,0 +1,35 @@
+<div ng-controller="schools-controller" id="schools-controller">
+    <div class="card">
+        <div class="item item-text-wrap">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome da escola</span>
+                    <input type="text" placeholder="Nome da escola" ng-model="name">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Responsável</span>
+                    <input type="text" placeholder="Responsável" ng-model="respons">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Telefone</span>
+                    <input type="text" placeholder="Telefone" ng-model="tele">
+                </label>
+                <button class="button button-block button-positive" ng-click="addSchool()">
+                    <i class="icon ion-ios-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item item-button-right" ng-repeat="X in schools">
+            <h2>{{X.school}}</h2>
+            {{X.responsible}}
+            <span class="tel">{{X.telephone}}</span>
+            <button class="button button-assertive tall-button" ng-click="deleteSchool(X.id, $index)">
+                <i class="icon ion-ios-trash-outline"></i>
+            </button>
+        </div>
+    </div>
+
+</div>

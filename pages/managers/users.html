@@ -1,0 +1,44 @@
+<div ng-controller="users-manager" id="class-controller">
+
+    <div class="card">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Acesso
+                </div>
+                <select ng-model="levelAccess" ng-change="changeSelectedItem(levelAccess)">
+                    <option value="2">Professor</option>
+                    <option value="1">Administrador</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="list">
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nome do usuário</span>
+                        <input type="text" placeholder="Nome do usuário" ng-model="user">
+                    </label>
+                    <button class="button button-block button-positive" ng-click="addUser()">
+                        <i class="icon icon ion-ios-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" ng-if="levelAccess != null || levelAccess != undefined">
+        <div class="list">
+            <div class="item item-button-right" ng-repeat="X in users | filter: {level: levelAccess}" id="usu1">
+                {{X.user}}
+                <button class="button button-assertive" ng-click="removeUser(X.id, $index)">
+                    <i class="icon ion-ios-trash-outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

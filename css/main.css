@@ -1,0 +1,161 @@
+body
+{
+    overflow-y: auto;
+    background: transparent url("../img/pattern-bg.png") repeat top
+    left;
+}
+
+main
+{
+    margin-top: 44px;
+}
+
+.container-chamada
+{
+    margin: 5px 10px;
+}
+
+.card:last-child
+{
+    margin-bottom: 70px;
+}
+
+.attendanceItem
+{
+    margin-bottom: -1px;
+}
+
+.attendanceItem:last-child
+{
+    margin-bottom: 50px;
+}
+
+.card:nth-child(1)
+{
+    margin-top: 65px;
+}
+
+main.ng-enter
+{
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    transition: 500ms all;
+    opacity: 0;
+}
+
+.tall-button
+{
+    height: 56px;
+}
+
+main.ng-enter.ng-enter-active
+{
+    opacity: 1;
+}
+
+#students div.ng-leave
+{
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    transition: 500ms all;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#students div.ng-leave.ng-leave-active
+{
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+#schools-controller div.ng-leave
+{
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    transition: 500ms all;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#schools-controller div.ng-leave.ng-leave-active
+{
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+#class-controller div.ng-leave
+{
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    transition: 500ms all;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#class-controller div.ng-leave.ng-leave-active
+{
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.item .span
+{
+    float: right;
+    color: #666666;
+    font-style: italic;
+}
+
+.tabs
+{
+    position: fixed;
+}
+
+.card .item .tel
+{
+    text-align: right;
+    float: right;
+    margin-top: -20px;
+}
+
+.setMode
+{
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0 auto;;
+    background: #387ef5 ;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.button-bar
+{
+    margin-top: 20px;
+}
+
+.addStarsAndObs
+{
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    display: none;
+}

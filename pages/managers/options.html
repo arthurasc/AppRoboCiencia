@@ -1,0 +1,28 @@
+<main ng-controller="manager-view" ng-include="dir"></main>
+
+<div class="tabs tabs-icon-top" ng-controller="manager-options">
+    <a class="tab-item" ng-click="navigation('schools.html')">
+        <i class="icon ion-ios-home-outline"></i>
+        Escolas
+    </a>
+    <a class="tab-item" ng-click="navigation('classes.html')">
+        <i class="icon ion-ios-list-outline"></i>
+        Turmas
+    </a>
+    <a class="tab-item" ng-click="navigation('users.html')">
+        <i class="icon ion-ios-people-outline"></i>
+        Usuários
+    </a>
+    <a class="tab-item" ng-click="navigation('lessons.html')">
+        <i class="icon ion-ios-book-outline"></i>
+        Aulas
+    </a>
+    <a class="tab-item" ng-click="navigation('schedule.html')">
+        <i class="icon ion-ios-clock-outline"></i>
+        Cronogramas
+    </a>
+    <a class="tab-item" href="#/">
+        <i class="icon ion-ios-close-outline"></i>
+        Sair
+    </a>
+</div>

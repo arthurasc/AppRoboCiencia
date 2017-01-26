@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="item item-text-wrap">
+
+        <div class="list">
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Escola
+                </div>
+                <select ng-model="school" ng-change="changeSelectedItem(school, 'school')">
+                    <option ng-repeat="X in data | unique : 'school'" value="{{X.id}}">{{X.school}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Turma
+                </div>
+                <select ng-model="class" ng-change="changeSelectedItem(class, 'class')">
+                    <option value="{{X.id}}" ng-repeat="X in classesLessons | unique : 'class'">{{X.class}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Aula
+                </div>
+                <select ng-model="lesson" ng-change="changeSelectedItem(lesson, 'lesson')">
+                    <option ng-repeat="X in classesLessons | unique : 'lessons'">{{X.lesson}}</option>
+                </select>
+            </label>
+
+            <div class="button-bar">
+                <a class="button ion-ios-paperplane button-positive" ng-click="startLesson()">
+                    Chamada
+                </a>
+                <a class="button ion-ios-checkmark-outline button-positive" ng-click="readAttendances(class)">
+                    Presenças
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>

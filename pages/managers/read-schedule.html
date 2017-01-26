@@ -1,0 +1,10 @@
+<div class="card" ng-controller="read-schedule-controller">
+    <div class="list" id="schools-controller">
+        <div class="item item-button-right" ng-repeat="X in userLessons">
+            {{X.lesson}}<span class="span">{{X.date}}</span>
+            <button class="button button-assertive tall-button" ng-click="removeLesson(X.id, $index)">
+                <i class="icon ion-ios-trash-outline"></i>
+            </button>
+        </div>
+    </div>
+</div>

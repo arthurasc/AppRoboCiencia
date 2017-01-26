@@ -1,0 +1,43 @@
+<div ng-controller="classes-manager" id="class-controller">
+
+    <div class="card">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Escola
+                </div>
+                <select ng-model="school" ng-change="changeSelectedItem(school)">
+                    <option ng-repeat="X in schools" value="{{X.id}}">{{X.school}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="list">
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nome da turma</span>
+                        <input type="text" placeholder="Nome da turma" ng-model="class">
+                    </label>
+                    <button class="button button-block button-positive" ng-click="addClass()">
+                        <i class="icon ion-ios-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" ng-if="school != null || school != undefined">
+        <div class="list">
+            <div class="item item-button-right" ng-repeat="X in classes">
+                {{X.class}}
+                <button class="button button-assertive" ng-click="removeClass(X.id, $index)">
+                    <i class="icon ion-ios-trash-outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

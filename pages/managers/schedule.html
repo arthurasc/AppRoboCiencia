@@ -1,0 +1,74 @@
+<div ng-controller="schedule-manager" id="class-controller">
+
+    <div class="card">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Professores
+                </div>
+                <select ng-model="usersList" ng-change="changeSelectedItem(usersList, 'user')">
+                    <option value="{{X.id}}" ng-repeat="X in users | filter: {level: 2}">{{X.user}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Escolas
+                </div>
+                <select ng-model="schoolsList" ng-change="changeSelectedItem(schoolsList, 'school')">
+                    <option value="{{X.id}}" ng-repeat="X in schools">{{X.school}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Turma
+                </div>
+                <select ng-model="classList" ng-change="changeSelectedItem(classList, 'class')">
+                    <option value="{{X.id}}" ng-repeat="X in classes">{{X.class}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Mês
+                </div>
+                <select ng-model="monthList" ng-change="changeSelectedItem(monthList, 'month')">
+                    <option value="{{X.value}}" ng-repeat="X in months">{{X.month}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Livro
+                </div>
+                <select ng-model="bookList" ng-change="bookList = bookList">
+                    <option value="0">Alfa</option>
+                    <option value="1">Beta</option>
+                    <option value="2">Gama</option>
+                    <option value="3">Laboratório</option>
+                </select>
+            </label>
+
+        </div>
+
+        <div class="item item-text-wrap">
+            <button class="button button-block button-positive" ng-click="readSchedule('read-schedule.html')">
+                <i class="icon ion-ios-search"></i> Consultar
+            </button>
+        </div>
+
+    </div>
+
+    <div class="card" ng-if="bookList != null || bookList != undefined">
+        <div class="list">
+            <div class="item item-button-right" ng-repeat="X in lessons | filter: {level: bookList} | orderBy: 'lesson'">
+                {{X.lesson}}
+                <button class="button button-balanced" ng-click="addLessonInSchedule(X.id, $index)">
+                    <i class="icon ion-ios-checkmark-outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

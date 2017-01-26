@@ -1,0 +1,26 @@
+<div ng-controller="lessons-done-controller">
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Escola
+        </div>
+        <select ng-model="school" ng-change="changeItem(school, 's')">
+            <option value="{{X.id}}" ng-repeat="X in schools | unique : 'school'">{{X.school}}</option>
+        </select>
+    </label>
+
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Turma
+        </div>
+        <select ng-model="class" ng-change="changeItem(class, 'c')">
+            <option value="{{X.id}}" ng-repeat="X in classes | unique : 'class'">{{X.class}}</option>
+        </select>
+    </label>
+
+
+    <div class="card" ng-repeat="X in lessons | unique : 'data'">
+        <div class="item">
+            {{X.lesson}} <span class="span">{{X.data}}</span>
+        </div>
+    </div>
+</div>

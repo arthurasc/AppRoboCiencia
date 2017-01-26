@@ -1,0 +1,46 @@
+<div ng-controller="lessons-manager" id="class-controller">
+
+    <div class="card">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Nível
+                </div>
+                <select ng-model="levelLesson" ng-change="changeSelectedItem(levelLesson)">
+                    <option value="0">Alfa</option>
+                    <option value="1">Beta</option>
+                    <option value="2">Gama</option>
+                    <option value="3">Laboratório</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="list">
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nome da aula</span>
+                        <input type="text" placeholder="Nome da aula" ng-model="lesson">
+                    </label>
+                    <button class="button button-block button-positive" ng-click="addLesson()">
+                        <i class="icon ion-ios-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" ng-if="levelLesson != undefined || levelLesson != null">
+        <div class="list">
+            <div class="item item-button-right" ng-repeat="X in lessons | filter: {level: levelLesson} | orderBy: 'lesson'">
+                {{X.lesson}}
+                <button class="button button-assertive" ng-click="removeLesson(X.id, $index)">
+                    <i class="icon ion-ios-trash-outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

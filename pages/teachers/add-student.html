@@ -1,0 +1,48 @@
+<div class="card" ng-controller="add-student">
+    <div class="item item-text-wrap">
+        <div class="list">
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">nome</span>
+                <input type="text" placeholder="nome" ng-model="sName">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">telefone</span>
+                <input type="text" placeholder="telefone" ng-model="sTelefone">
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    escola
+                </div>
+                <select ng-model="addStudent" ng-change="changeSelectedItem(addStudent, 'addStudent')">
+                    <option ng-repeat="X in data | unique : 'school'" value="{{X.id}}">{{X.school}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    turma
+                </div>
+                <select ng-model="addStudentClass" ng-change="changeSelectedItem(addStudentClass, 'addStudentClass')">
+                    <option ng-repeat="X in classesLessons | unique : 'class'">{{X.class}}</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">responsável</span>
+                <input type="text" placeholder="responsável" ng-model="sResponsi">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">telefone</span>
+                <input type="text" placeholder="telefone" ng-model="sResTel">
+            </label>
+
+            <button class="button button-block button-positive" ng-click="AddStudent()">
+                <i class="icon ion-ios-plus"></i> Adicionar
+            </button>
+        </div>
+    </div>
+</div>
